@@ -3,31 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>VividMarket · modern shopping</title>
+  <title>NexusShop · Modern Shopping</title>
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Inter', system-ui, sans-serif;
-      background: #f6f5fc;
-      color: #171725;
+      background: #f7f7fb;
+      color: #1e1e2a;
       line-height: 1.5;
     }
     :root {
-      --primary: #171725;
-      --accent: #f97373;
-      --accent2: #7c6df0;
-      --accent3: #2dd4bf;
-      --gold: #fbbf24;
-      --orange: #fb923c;
+      --primary: #1e1e2a;
+      --accent: #ff7b9c;
+      --accent2: #6c5ce7;
+      --accent3: #00c9a7;
+      --yellow: #fdcb6e;
+      --orange: #f39c12;
       --bg-card: #ffffff;
       --bg-soft: #fff5f2;
-      --shadow: 0 12px 30px rgba(0, 0, 0, 0.03), 0 8px 18px rgba(0, 0, 0, 0.02);
-      --radius: 24px;
+      --shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 6px 16px rgba(0, 0, 0, 0.02);
+      --radius: 20px;
       --radius-sm: 14px;
       --container: 1240px;
     }
@@ -40,65 +44,64 @@
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #f0eff6;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #eeeef5;
     }
     .header-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
-      padding: 12px 0;
+      gap: 12px;
+      padding: 14px 0;
       flex-wrap: wrap;
     }
     .brand {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 800;
-      font-size: 1.7rem;
-      letter-spacing: -0.5px;
-      background: linear-gradient(145deg, #f97373, #7c6df0);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1.55rem;
+      background: linear-gradient(135deg, #ff7b9c, #6c5ce7);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: -0.5px;
     }
-    .brand i { -webkit-text-fill-color: initial; color: #f97373; margin-right: 6px; }
+    .brand i { -webkit-text-fill-color: initial; color: #ff7b9c; margin-right: 4px; }
 
     nav.main-nav ul {
       display: flex;
-      gap: 4px;
+      gap: 6px;
       list-style: none;
       align-items: center;
     }
     nav.main-nav li a {
-      padding: 8px 18px;
+      padding: 8px 16px;
       border-radius: 40px;
       font-weight: 600;
       font-size: 0.95rem;
       display: flex;
       align-items: center;
       gap: 8px;
-      color: #4a4a60;
+      color: #44445a;
       transition: all 0.2s;
     }
     nav.main-nav li a:hover,
     nav.main-nav li a[aria-current="page"] {
-      background: #eeebff;
+      background: #f1efff;
       color: #5b4bd8;
+      box-shadow: none;
     }
 
     .search {
       display: flex;
       align-items: center;
       background: #fff;
-      padding: 4px 4px 4px 18px;
+      padding: 6px 6px 6px 18px;
       border-radius: 60px;
-      border: 1px solid #e9e9f2;
-      box-shadow: 0 6px 18px rgba(30, 30, 42, .04);
-      min-width: 260px;
-      transition: 0.2s;
+      border: 1px solid #e7e7ef;
+      box-shadow: 0 4px 18px rgba(30, 30, 42, .06);
+      min-width: 280px;
     }
-    .search:focus-within { border-color: #7c6df0; box-shadow: 0 6px 18px rgba(124, 109, 240, .08); }
     .search input {
       border: 0;
       background: transparent;
@@ -109,23 +112,23 @@
     }
     .search input::placeholder { color: #9a9ab0; }
     .search button {
-      background: var(--accent2);
+      background: var(--accent);
       border: 0;
       color: #fff;
-      width: 42px;
-      height: 42px;
+      width: 40px;
+      height: 40px;
       border-radius: 60px;
       cursor: pointer;
       transition: 0.2s;
     }
-    .search button:hover { background: #5e4dd6; transform: scale(0.94); }
+    .search button:hover { background: #e86384; transform: scale(0.95); }
 
-    .header-actions { display: flex; align-items: center; gap: 8px; }
+    .header-actions { display: flex; align-items: center; gap: 14px; }
     .icon-btn {
       background: transparent;
       border: 0;
-      font-size: 1.25rem;
-      color: #171725;
+      font-size: 1.3rem;
+      color: #1e1e2a;
       transition: 0.2s;
       cursor: pointer;
       width: 42px;
@@ -135,7 +138,7 @@
       align-items: center;
       justify-content: center;
     }
-    .icon-btn:hover { background: rgba(124, 109, 240, 0.08); color: var(--accent2); }
+    .icon-btn:hover { background: rgba(255, 123, 156, 0.12); color: var(--accent); }
     .cart {
       position: relative;
       display: inline-flex;
@@ -145,7 +148,7 @@
       position: absolute;
       top: -6px;
       right: -6px;
-      background: var(--accent);
+      background: var(--accent2);
       color: #fff;
       font-size: 0.7rem;
       font-weight: 700;
@@ -159,48 +162,48 @@
     .mobile-toggle { display: none; background: transparent; border: 0; font-size: 1.6rem; cursor: pointer; }
 
     .utility-bar {
-      background: #171725; color: #fff; font-size: .82rem;
+      background: #1e1e2a; color: #fff; font-size: .82rem;
       padding: 7px 0; text-align: center;
     }
-    .utility-bar strong { color: #fbbf24; }
+    .utility-bar strong { color: #ffd166; }
 
     /* ===== HERO ===== */
     .hero {
       margin: 18px auto 0;
       max-width: 1240px;
-      border-radius: 32px;
-      padding: 64px 20px;
+      border-radius: 28px;
+      padding: 72px 20px;
       background:
-        radial-gradient(circle at 80% 30%, rgba(255,255,255,.7), transparent 30%),
-        linear-gradient(135deg, #ffedea 0%, #edeaff 100%);
+        radial-gradient(circle at 85% 20%, rgba(255,255,255,.75), transparent 28%),
+        linear-gradient(135deg, #fff1ed 0%, #f0edff 100%);
       text-align: center;
       position: relative;
       overflow: hidden;
     }
     .hero::after {
-      content: "🛍️";
-      font-size: 8rem;
+      content: "✨";
+      font-size: 10rem;
       position: absolute;
-      right: 10px;
-      bottom: -20px;
-      opacity: 0.12;
-      transform: rotate(6deg);
+      right: -20px;
+      bottom: -30px;
+      opacity: 0.15;
+      transform: rotate(10deg);
     }
     .hero h1 {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2.4rem, 5vw, 3.8rem);
-      font-weight: 800;
-      background: linear-gradient(135deg, #171725 20%, #7c6df0 80%);
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #1e1e2a 20%, #6c5ce7 80%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: 12px;
-      max-width: 720px;
+      max-width: 760px;
       margin-left: auto;
       margin-right: auto;
     }
     .hero p {
-      max-width: 600px;
+      max-width: 640px;
       margin: 0 auto 28px;
       font-size: 1.1rem;
       color: #55556b;
@@ -209,13 +212,13 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 16px;
+      gap: 14px;
     }
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 14px 34px;
+      padding: 14px 32px;
       border-radius: 60px;
       font-weight: 700;
       border: 0;
@@ -224,30 +227,30 @@
       font-size: 1rem;
     }
     .btn-primary {
-      background: linear-gradient(145deg, var(--accent2), #9b8cff);
+      background: linear-gradient(135deg, var(--accent2), #a29bfe);
       color: #fff;
-      box-shadow: 0 8px 24px rgba(124, 109, 240, 0.25);
+      box-shadow: 0 8px 20px rgba(108, 92, 231, 0.25);
     }
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 32px rgba(124, 109, 240, 0.35);
+      box-shadow: 0 14px 28px rgba(108, 92, 231, 0.35);
     }
     .btn-ghost {
       background: rgba(255, 255, 255, 0.7);
       backdrop-filter: blur(4px);
-      color: #171725;
-      border: 2px solid rgba(249, 115, 115, 0.15);
+      color: #1e1e2a;
+      border: 2px solid rgba(255, 123, 156, 0.2);
     }
     .btn-ghost:hover { background: #fff; border-color: var(--accent); }
 
     /* ===== SECTIONS ===== */
-    .section { padding: 48px 0 24px; }
+    .section { padding: 56px 0 24px; }
     .section-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.55rem, 3vw, 2rem);
       font-weight: 700;
     }
-    .section .title { text-align: center; margin-bottom: 28px; }
+    .section .title { text-align: center; margin-bottom: 30px; }
     .title p { color: #5a5a72; margin-top: 4px; }
 
     /* ===== CATEGORIES ===== */
@@ -257,11 +260,10 @@
     }
     .filter-hint { color: #77778d; font-size: .9rem; }
     .clear-filter {
-      border: 1px solid #e5e5ef; background: #fff; color: #55556b;
-      border-radius: 999px; padding: 8px 16px; cursor: pointer; font-weight: 600;
-      transition: 0.2s;
+      border: 1px solid #ddddeb; background: #fff; color: #55556b;
+      border-radius: 999px; padding: 8px 14px; cursor: pointer; font-weight: 600;
     }
-    .clear-filter:hover { background: #f5f3ff; border-color: #b7abf5; }
+    .clear-filter:hover { background: #f6f5fb; }
 
     .categories {
       display: grid;
@@ -271,26 +273,26 @@
     .cat-card {
       background: #fff;
       border-radius: var(--radius);
-      padding: 18px 8px;
+      padding: 18px 10px;
       text-align: center;
-      border: 1px solid #eeedf5;
-      box-shadow: 0 6px 20px rgba(30, 30, 42, .04);
+      border: 1px solid #ededf4;
+      box-shadow: 0 6px 20px rgba(30, 30, 42, .05);
       transition: all 0.2s;
       cursor: pointer;
     }
     .cat-card:hover {
-      transform: translateY(-4px);
-      border-color: #c6bfff;
-      box-shadow: 0 12px 28px rgba(124, 109, 240, .08);
+      transform: translateY(-3px);
+      border-color: #cfc9ff;
+      box-shadow: 0 12px 28px rgba(108, 92, 231, .10);
     }
-    .cat-card.active { border-color: #7c6df0; background: #f6f4ff; }
+    .cat-card.active { border-color: #6c5ce7; background: #f7f5ff; }
     .cat-card .icon {
       font-size: 2.2rem;
-      background: linear-gradient(145deg, #f97373, #fbbf24);
+      background: linear-gradient(135deg, #ff7b9c, #fdcb6e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .cat-card h4 { font-weight: 700; font-size: 0.95rem; margin-top: 4px; }
     .cat-card .muted { color: #8888a0; font-size: 0.75rem; margin-top: 2px; }
@@ -302,44 +304,42 @@
     }
     .result-count { color: #77778d; font-size: .9rem; }
     .sort-select {
-      border: 1px solid #e5e5ef; border-radius: 14px; padding: 9px 14px;
+      border: 1px solid #ddddeb; border-radius: 12px; padding: 9px 12px;
       background: #fff; color: #333348; font: inherit; cursor: pointer;
-      transition: 0.2s;
     }
-    .sort-select:focus { border-color: #7c6df0; outline: none; }
 
     .products {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
     .product {
       background: #fff;
       border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid #eeedf5;
-      box-shadow: 0 7px 24px rgba(30, 30, 42, .04);
-      transition: all 0.25s;
+      border: 1px solid #ededf4;
+      box-shadow: 0 7px 24px rgba(30, 30, 42, .06);
+      transition: all 0.2s;
       display: flex;
       flex-direction: column;
       position: relative;
     }
     .product:hover {
-      transform: translateY(-5px);
-      border-color: #d6ceff;
-      box-shadow: 0 18px 36px rgba(30, 30, 42, .08);
+      transform: translateY(-4px);
+      border-color: #dcd8ff;
+      box-shadow: 0 16px 34px rgba(30, 30, 42, .10);
     }
     .product img {
       width: 100%;
       height: 210px;
       object-fit: cover;
-      background: #f2edea;
+      background: #f1ece9;
     }
-    .product-body { padding: 16px 16px 4px; flex: 1; }
-    .product-body h5 { font-weight: 700; font-size: 1.05rem; line-height: 1.35; margin-bottom: 2px; }
+    .product-body { padding: 16px 16px 6px; flex: 1; }
+    .product-body h5 { font-weight: 700; font-size: 1.03rem; line-height: 1.35; margin-bottom: 2px; }
     .product-body .category-tag {
       font-size: 0.7rem;
-      color: var(--accent2);
+      color: var(--accent);
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
@@ -350,9 +350,9 @@
       justify-content: space-between;
       margin-top: 6px;
     }
-    .price { font-weight: 700; font-size: 1.2rem; color: #171725; }
+    .price { font-weight: 700; font-size: 1.2rem; color: #1e1e2a; }
     .old-price { color: #9a9ab0; text-decoration: line-through; font-size: 0.9rem; margin-left: 6px; }
-    .rating { color: #fbbf24; font-size: 0.9rem; }
+    .rating { color: #f1c40f; font-size: 0.9rem; }
     .product-footer {
       padding: 12px 16px 16px;
       display: flex;
@@ -361,7 +361,7 @@
     }
     .add-btn {
       flex: 1;
-      background: linear-gradient(145deg, var(--accent2), #9b8cff);
+      background: linear-gradient(135deg, var(--accent2), #a29bfe);
       color: #fff;
       border: 0;
       padding: 12px 0;
@@ -371,7 +371,7 @@
       transition: 0.2s;
       min-height: 44px;
     }
-    .add-btn:hover { transform: scale(0.96); box-shadow: 0 8px 18px rgba(124, 109, 240, 0.2); }
+    .add-btn:hover { transform: scale(0.96); box-shadow: 0 8px 16px rgba(108, 92, 231, 0.2); }
     .wish-btn {
       background: #f5f0ee;
       border: 0;
@@ -379,22 +379,22 @@
       border-radius: 60px;
       cursor: pointer;
       transition: 0.2s;
-      color: #171725;
+      color: #1e1e2a;
       height: 44px;
     }
     .wish-btn:hover { background: var(--accent); color: #fff; }
-    .wish-btn.active { background: #ffedf2; color: #f97373; }
+    .wish-btn.active { background: #ffedf2; color: #ff4f7b; }
     .badge {
       position: absolute;
       top: 12px;
       left: 12px;
-      background: var(--gold);
+      background: var(--yellow);
       padding: 4px 14px;
       border-radius: 40px;
       font-weight: 700;
       font-size: 0.7rem;
-      color: #171725;
-      box-shadow: 0 4px 12px rgba(251, 191, 36, 0.3);
+      color: #1e1e2a;
+      box-shadow: 0 4px 12px rgba(253, 203, 110, 0.3);
     }
 
     .empty-state {
@@ -406,7 +406,7 @@
       border-radius: 20px;
       color: #66667d;
     }
-    .empty-state i { font-size: 2.2rem; margin-bottom: 10px; color: #b8b8cc; }
+    .empty-state i { font-size: 2rem; margin-bottom: 10px; color: #aaaabc; }
 
     /* ===== DEAL ===== */
     .deal {
@@ -417,7 +417,7 @@
       overflow: hidden;
       align-items: stretch;
       border: 1px solid #f0e2dd;
-      box-shadow: 0 8px 28px rgba(30, 30, 42, .04);
+      box-shadow: 0 8px 28px rgba(30, 30, 42, .05);
     }
     .deal img {
       width: 50%;
@@ -425,7 +425,7 @@
       object-fit: cover;
     }
     .deal .content { padding: 32px 28px; flex: 1; display: flex; flex-direction: column; justify-content: center; }
-    .deal .content h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 1.8rem; }
+    .deal .content h3 { font-family: 'Poppins', sans-serif; font-size: 1.8rem; }
     .timer {
       display: flex;
       gap: 12px;
@@ -433,7 +433,7 @@
       flex-wrap: wrap;
     }
     .time-box {
-      background: #171725;
+      background: #1e1e2a;
       color: #fff;
       padding: 10px 14px;
       border-radius: var(--radius-sm);
@@ -454,24 +454,24 @@
     .testimonial {
       min-width: 280px;
       background: #fff;
-      padding: 22px;
+      padding: 20px;
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      border-left: 6px solid var(--accent2);
+      border-left: 6px solid var(--accent);
     }
-    .testimonial .rating { color: #fbbf24; font-size: 1rem; }
+    .testimonial .rating { color: #f1c40f; font-size: 1rem; }
 
     /* ===== NEWSLETTER ===== */
     .newsletter {
-      background: linear-gradient(145deg, #7c6df0, #b4a7ff);
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
       color: #fff;
       border-radius: var(--radius);
       padding: 44px 32px;
       text-align: center;
     }
-    .newsletter h3 { font-size: 2rem; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .newsletter h3 { font-size: 2rem; font-family: 'Poppins', sans-serif; }
     .newsletter input {
-      padding: 14px 22px;
+      padding: 14px 20px;
       border-radius: 60px;
       border: 0;
       width: 320px;
@@ -480,7 +480,7 @@
       font-size: 1rem;
     }
     .newsletter .btn-primary {
-      background: #171725;
+      background: #1e1e2a;
       color: #fff;
       box-shadow: none;
     }
@@ -490,15 +490,15 @@
     footer {
       margin-top: 24px;
       padding: 40px 0 24px;
-      border-top: 2px solid rgba(124, 109, 240, 0.06);
+      border-top: 2px solid rgba(255, 123, 156, 0.08);
       color: #5a5a72;
     }
 
     /* ===== TOAST / CART DRAWER ===== */
     .toast {
       position: fixed; right: 20px; bottom: 20px; z-index: 100;
-      background: #171725; color: #fff; padding: 13px 18px;
-      border-radius: 16px; box-shadow: 0 12px 30px rgba(0,0,0,.15);
+      background: #1e1e2a; color: #fff; padding: 13px 16px;
+      border-radius: 12px; box-shadow: 0 12px 30px rgba(0,0,0,.18);
       opacity: 0; transform: translateY(12px); pointer-events: none;
       transition: .25s ease; font-weight: 600;
     }
@@ -517,19 +517,19 @@
       position: absolute; top: 0; right: 0; width: min(410px, 100%);
       height: 100%; background: #fff; padding: 22px;
       transform: translateX(100%); transition: .28s ease;
-      box-shadow: -16px 0 40px rgba(0,0,0,.1); display: flex; flex-direction: column;
+      box-shadow: -16px 0 40px rgba(0,0,0,.14); display: flex; flex-direction: column;
     }
     .cart-drawer.open .cart-panel { transform: translateX(0); }
-    .cart-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid #eeedf5; }
+    .cart-header { display: flex; justify-content: space-between; align-items: center; padding-bottom: 16px; border-bottom: 1px solid #eeeef5; }
     .cart-items { flex: 1; overflow: auto; padding: 16px 0; }
     .cart-empty { text-align: center; color: #77778d; padding: 40px 10px; }
     .cart-item { display: flex; gap: 12px; align-items: center; padding: 12px 0; border-bottom: 1px solid #f0f0f5; }
-    .cart-item img { width: 62px; height: 62px; object-fit: cover; border-radius: 14px; background: #f4f4f7; }
+    .cart-item img { width: 62px; height: 62px; object-fit: cover; border-radius: 12px; background: #f4f4f7; }
     .cart-item-info { flex: 1; }
     .cart-item-info strong { display: block; font-size: .9rem; }
-    .cart-item-info span { color: #7c6df0; font-weight: 700; font-size: .9rem; }
+    .cart-item-info span { color: #6c5ce7; font-weight: 700; font-size: .9rem; }
     .cart-remove { border: 0; background: #f5f5f8; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; }
-    .cart-total { border-top: 1px solid #eeedf5; padding-top: 16px; }
+    .cart-total { border-top: 1px solid #eeeef5; padding-top: 16px; }
     .cart-total-row { display: flex; justify-content: space-between; font-size: 1.05rem; font-weight: 700; margin-bottom: 14px; }
     .checkout-btn { width: 100%; justify-content: center; }
 
@@ -537,7 +537,7 @@
     @media (max-width: 1024px) {
       .categories { grid-template-columns: repeat(3, 1fr); }
       .products { grid-template-columns: repeat(3, 1fr); }
-      .search { min-width: 200px; }
+      .search { min-width: 230px; }
     }
     @media (max-width: 820px) {
       .search { order: 3; width: 100%; min-width: 0; }
@@ -551,13 +551,13 @@
     }
     @media (max-width: 600px) {
       .utility-bar { font-size: .75rem; }
-      .hero { padding: 44px 16px; border-radius: 22px; }
+      .hero { padding: 52px 16px; border-radius: 22px; }
       .hero h1 { font-size: 2rem; }
       .products { grid-template-columns: 1fr; }
       .categories { grid-template-columns: repeat(2, 1fr); }
       .deal { flex-direction: column; }
       .deal img { width: 100%; height: 200px; }
-      .section { padding-top: 36px; }
+      .section { padding-top: 42px; }
       .toast { left: 16px; right: 16px; text-align: center; }
       .search { min-width: 0; }
     }
@@ -565,7 +565,7 @@
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     html { scroll-behavior: smooth; }
     :focus-visible {
-      outline: 3px solid rgba(124,109,240,.45);
+      outline: 3px solid rgba(108,92,231,.45);
       outline-offset: 3px;
       border-radius: 8px;
     }
@@ -573,13 +573,13 @@
 </head>
 <body>
 
-  <div class="utility-bar"><i class="fas fa-truck"></i> Free shipping on orders over <strong>$50</strong> · 30-day easy returns</div>
+  <div class="utility-bar">Free shipping on orders over <strong>$50</strong> · Easy 30-day returns</div>
 
   <header>
     <div class="container header-inner">
       <div style="display:flex;align-items:center;gap:12px;">
         <button class="mobile-toggle" id="mobileToggle" aria-label="menu"><i class="fas fa-bars"></i></button>
-        <a class="brand" href="#"><i class="fas fa-store-alt"></i>Vivid<span style="background:linear-gradient(145deg,#7c6df0,#f97373);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Market</span></a>
+        <a class="brand" href="#"><i class="fas fa-store-alt"></i>Nexus<span style="background:linear-gradient(135deg,#6c5ce7,#ff7b9c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Shop</span></a>
       </div>
 
       <nav class="main-nav" id="mainNav">
@@ -593,14 +593,14 @@
 
       <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <div class="search">
-          <input type="search" id="searchInput" placeholder="Search for products, brands..." aria-label="Search">
+          <input type="search" id="searchInput" placeholder="Search products, brands..." aria-label="Search">
           <button id="searchBtn"><i class="fas fa-search"></i></button>
         </div>
         <div class="header-actions">
           <a class="icon-btn" href="#" title="Account" aria-label="Account"><i class="far fa-user"></i></a>
           <a class="icon-btn" href="#" title="Wishlist" aria-label="Wishlist"><i class="far fa-heart"></i></a>
           <a class="cart" href="#" id="cartBtn">
-            <i class="fas fa-shopping-bag" style="font-size:1.4rem;"></i>
+            <i class="fas fa-shopping-cart" style="font-size:1.4rem;"></i>
             <span class="cart-count" id="cartCount">0</span>
           </a>
         </div>
@@ -608,7 +608,7 @@
     </div>
 
     <!-- mobile menu -->
-    <div id="mobileMenu" style="display:none; background: #fff; border-top:2px solid #f0e8f0; padding: 12px 0;">
+    <div id="mobileMenu" style="display:none; background: #fff; border-top:2px solid #ffe0d9; padding: 12px 0;">
       <div class="container">
         <nav>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;padding:0;">
@@ -626,10 +626,10 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <h1>Discover vibrant finds ✨</h1>
-        <p>From tech to fashion — curated picks, exclusive deals, and free delivery. Your next favorite thing is here.</p>
+        <h1>Fresh finds, vibrant vibes ✨</h1>
+        <p>Discover the season’s most colorful picks — from tech to fashion. Limited deals, free shipping &amp; happy shopping.</p>
         <div class="btn-group">
-          <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Start shopping</button>
+          <button class="btn btn-primary" id="shopNow"><i class="fas fa-arrow-right"></i> Shop now</button>
           <button class="btn btn-ghost" id="exploreDeals"><i class="fas fa-gift"></i> Explore deals</button>
         </div>
       </div>
@@ -638,11 +638,11 @@
     <!-- CATEGORIES -->
     <section class="section container" aria-labelledby="cat-title">
       <div class="title" id="cat-title">
-        <h2 class="section-title">📂 Shop by category</h2>
-        <p>Pick a category and start browsing</p>
+        <h2 class="section-title">🌈 Shop by category</h2>
+        <p>Tap a tile to discover your favorite products</p>
       </div>
       <div class="category-toolbar">
-        <span class="filter-hint" id="filterHint">All categories</span>
+        <span class="filter-hint" id="filterHint">Browse all categories</span>
         <button class="clear-filter" id="clearFilter" type="button"><i class="fas fa-rotate-left"></i> Show all</button>
       </div>
       <div class="categories" id="categoriesGrid"></div>
@@ -651,8 +651,8 @@
     <!-- PRODUCTS -->
     <section class="section container" aria-labelledby="prod-title">
       <div class="title" id="prod-title">
-        <h2 class="section-title">🔥 Trending now</h2>
-        <p>Most loved by our community</p>
+        <h2 class="section-title">⭐ Trending now</h2>
+        <p>What people are loving this week</p>
       </div>
       <div class="product-toolbar">
         <span class="result-count" id="resultCount">8 products</span>
@@ -660,8 +660,8 @@
           <span class="sr-only">Sort products</span>
           <select class="sort-select" id="sortSelect" aria-label="Sort products">
             <option value="featured">Sort: Featured</option>
-            <option value="price-low">Price: Low → High</option>
-            <option value="price-high">Price: High → Low</option>
+            <option value="price-low">Price: Low to high</option>
+            <option value="price-high">Price: High to low</option>
             <option value="rating">Top rated</option>
           </select>
         </label>
@@ -672,14 +672,14 @@
     <!-- DEAL -->
     <section id="deals" class="section container">
       <div class="title">
-        <h2 class="section-title">⚡ Flash sale</h2>
-        <p>Grab it before it's gone</p>
+        <h2 class="section-title">🔥 Flash sale</h2>
+        <p>Hurry, prices go back up soon</p>
       </div>
       <div class="deal">
         <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="MacBook Air M2">
         <div class="content">
           <h3>MacBook Air M2</h3>
-          <p class="muted" style="color:#5a5a72;">Lightweight, powerful, and available in stunning colors.</p>
+          <p class="muted" style="color:#5a5a72;">Ultraportable, powerful, and now in stunning colors.</p>
           <div class="timer">
             <div class="time-box"><span id="dealDays">0</span><br><small>Days</small></div>
             <div class="time-box"><span id="dealHours">00</span><br><small>Hours</small></div>
@@ -699,13 +699,13 @@
     <!-- TESTIMONIALS -->
     <section class="section container">
       <div class="title">
-        <h2 class="section-title">💬 What our customers say</h2>
-        <p>Real feedback from real shoppers</p>
+        <h2 class="section-title">💬 Happy customers</h2>
+        <p>Real reviews from real shoppers</p>
       </div>
       <div class="testimonials" id="testimonials">
         <div class="testimonial">
           <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-          <p style="margin:8px 0;">"Absolutely love the variety! The colors are vibrant and shipping was super fast."</p>
+          <p style="margin:8px 0;">"Absolutely love the variety and the colors! Shipping was super fast."</p>
           <div style="display:flex;align-items:center;gap:12px;margin-top:6px;">
             <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:44px;height:44px;border-radius:60px;object-fit:cover;">
             <div><strong>Ava Martin</strong><div style="font-size:0.8rem;color:#8888a0;">Verified buyer</div></div>
@@ -713,10 +713,10 @@
         </div>
         <div class="testimonial">
           <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
-          <p style="margin:8px 0;">"Great quality and the checkout was seamless. Will definitely order again."</p>
+          <p style="margin:8px 0;">"Great quality and the checkout was a breeze. Will definitely order again."</p>
           <div style="display:flex;align-items:center;gap:12px;margin-top:6px;">
             <img src="https://images.unsplash.com/photo-1546456073-6712f79251bb?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:44px;height:44px;border-radius:60px;object-fit:cover;">
-            <div><strong>Michael Lee</strong><div style="font-size:0.8rem;color:#8888a0;">Frequent shopper</div></div>
+            <div><strong>Michael Lee</strong><div style="font-size:0.8rem;color:#8888a0;">Frequent buyer</div></div>
           </div>
         </div>
       </div>
@@ -726,9 +726,9 @@
     <section class="section container">
       <div class="newsletter">
         <h3><i class="fas fa-envelope-open-text"></i> Stay in the loop</h3>
-        <p style="opacity:0.85;margin-bottom:16px;">Get exclusive offers, early access &amp; style inspiration</p>
+        <p style="opacity:0.85;margin-bottom:16px;">Get exclusive offers &amp; early access</p>
         <form id="newsletterForm" style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">
-          <input type="email" id="newsletterEmail" placeholder="Your email address" required>
+          <input type="email" id="newsletterEmail" placeholder="Your email" required>
           <button class="btn btn-primary" id="subscribeBtn"><i class="fas fa-paper-plane"></i> Subscribe</button>
         </form>
         <div id="newsletterMsg" style="margin-top:12px;font-size:0.95rem;display:none;"></div>
@@ -739,8 +739,8 @@
   <footer>
     <div class="container" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start;">
       <div style="max-width:300px;">
-        <div style="font-weight:800;font-size:1.6rem;background:linear-gradient(145deg,#f97373,#7c6df0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">VividMarket</div>
-        <p style="margin-top:6px;color:#5a5a72;">Colorful e‑commerce demo with a modern touch.</p>
+        <div style="font-weight:700;font-size:1.5rem;background:linear-gradient(135deg,#ff7b9c,#6c5ce7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">NexusShop</div>
+        <p style="margin-top:6px;color:#5a5a72;">Colorful e‑commerce demo with love.</p>
         <div style="display:flex;gap:14px;margin-top:12px;">
           <a href="#" class="icon-btn" style="background:#f0ebe8;"><i class="fab fa-facebook-f"></i></a>
           <a href="#" class="icon-btn" style="background:#f0ebe8;"><i class="fab fa-twitter"></i></a>
@@ -752,7 +752,7 @@
         <div><strong>Support</strong><div style="color:#5a5a72;line-height:2;">Help Center<br>Shipping<br>Contact</div></div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:28px;color:#9a9ab0;font-size:0.85rem;">© <span id="year"></span> VividMarket · all rights reserved</div>
+    <div style="text-align:center;margin-top:28px;color:#9a9ab0;font-size:0.85rem;">© <span id="year"></span> NexusShop · all rights reserved</div>
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -810,7 +810,7 @@
       id: 99, title: 'MacBook Air M2 (Flash Deal)', price: 999, oldPrice: 1199,
       rating: 5, reviews: 312,
       img: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80',
-      category: 'laptops', badge: '⚡ Flash'
+      category: 'laptops', badge: 'Flash deal'
     });
 
     let cart = [];
@@ -835,7 +835,7 @@
         div.innerHTML = `
           <div class="icon"><i class="fas ${cat.icon}"></i></div>
           <h4>${cat.name}</h4>
-          <div class="muted">Explore</div>
+          <div class="muted">Explore products</div>
         `;
         div.addEventListener('click', () => {
           searchInput.value = cat.name;
@@ -858,7 +858,7 @@
             <p>Try another search or browse all products.</p>
             <button class="btn btn-ghost" id="emptyReset" type="button" style="margin-top:14px;">Show all products</button>
           </div>`;
-        document.getElementById('emptyReset')?.addEventListener('click', clearFilters);
+        document.getElementById('emptyReset').addEventListener('click', clearFilters);
         return;
       }
 
@@ -901,7 +901,7 @@
       if (!p) return;
       cart.push(p);
       updateCart();
-      showToast(`${p.title} added to cart`);
+      showToast(`${p.title} added to your cart`);
       const btn = document.querySelector(`.add-btn[data-id="${id}"]`);
       if (btn) {
         const orig = btn.innerHTML;
@@ -975,7 +975,7 @@
         (CATEGORIES.find(c => c.id === p.category)?.name || '').toLowerCase().includes(query)
       );
       currentList = filtered;
-      filterHintEl.textContent = query ? `Showing results for “${q.trim()}”` : 'All categories';
+      filterHintEl.textContent = query ? `Showing results for “${q.trim()}”` : 'Browse all categories';
       renderProducts(applySort(filtered));
       renderCategories(query);
     }
@@ -992,7 +992,7 @@
       searchInput.value = '';
       sortSelect.value = 'featured';
       currentList = PRODUCTS.slice();
-      filterHintEl.textContent = 'All categories';
+      filterHintEl.textContent = 'Browse all categories';
       renderCategories();
       renderProducts(PRODUCTS.filter(p => p.id !== 99));
     }
